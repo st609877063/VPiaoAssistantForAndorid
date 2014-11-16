@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!--身份证识别器-->
+    <usb-device vendor-id="1061" product-id="33113" />
+    <!--斯普瑞特POS打印机-->
+    <!--<usb-device vendor-id="1155" product-id="22304" />-->
+    <!--<usb-device vendor-id="1659" product-id="8965" />-->
+    <!--新北洋POS打印机-->
+    <!--<usb-device vendor-id="5455" product-id="5455" />-->
+</resources>

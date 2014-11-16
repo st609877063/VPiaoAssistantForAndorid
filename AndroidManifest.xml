@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.VpiaoAssistant"
+          android:versionCode="1"
+          android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="14"/>
+    <uses-feature android:name="android.hardware.usb.host"></uses-feature>
+    <uses-feature android:name="android.hardware.camera"></uses-feature>
+    <uses-feature android:name="android.hardware.camera.autofocus"></uses-feature>
+    <!--权限开始-->
+    <!--摄像头-->
+    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <!--安装和卸载可以移动存储-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+    <!--程序写SD卡-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <!--读SD卡-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <!--酷云相关-->
+    <uses-permission android:name="android.permission.KOOLCLOUD_MSR" />
+    <uses-permission android:name="android.permission.KOOLCLOUD_PINPAD" />
+    <uses-permission android:name="android.permission.KOOLCLOUD_PIN_GET_PIN_BLOCK" />
+    <uses-permission android:name="android.permission.KOOLCLOUD_PIN_MAC" />
+    <uses-permission android:name="android.permission.KOOLCLOUD_PIN_ENCRYPT_DATA" />
+    <uses-permission android:name="android.permission.KOOLCLOUD_PIN_UPDATE_MASTER_KEY" />
+    <uses-permission android:name="android.permission.KOOLCLOUD_PIN_UPDATE_USER_KEY" />
+    <uses-permission android:name="android.permission.KOOLCLOUD_PRINTER" />
+    <uses-permission android:name="android.permission.KOOLCLOUD_SAFE_MODULE" />
+    <uses-permission android:name="android.permission.KOOLCLOUD_SAFE_MODULE_READONLY" />
+    <uses-permission android:name="android.permission.KOOLCLOUD_SMARTCARD" />
+    <uses-permission android:name="android.permission.KOOLCLOUD_CONTACTLESS_CARD" />
+    <!--网络-->
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <!--网络状态-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <!--权限结束-->
+    <application
+            android:label="@string/app_name"
+            android:icon="@drawable/ic_launcher"
+            android:theme="@style/AppTheme"
+            android:name="com.vpiao.VpiaoApp">
+        <activity android:name="main_activity"
+                  android:label="@string/app_name">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name="com.vpiao.ui.views.Login">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"/>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_DETACHED" />
+            </intent-filter>
+            <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                       android:resource="@xml/device_filter"/>
+            <meta-data android:name="android.hardware.usb.action.USB_DEVICE_DETACHED"
+                       android:resource="@xml/device_filter"/>
+        </activity>
+        <activity android:name="com.vpiao.ui.views.CheckMain">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.zxing.client.android.CaptureActivity"></activity>
+    </application>
+</manifest>

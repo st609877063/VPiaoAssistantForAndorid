@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--服务器相关配置-->
+    <!--下载文件完成-->
+    <integer name="download_completed">1</integer>
+    <!--解压文件完成-->
+    <integer name="unzip_completed">2</integer>
+
+    <integer name="version_download">1</integer>
+    <integer name="message_download">1</integer>
+    <integer name="receivePackageTotalSize_download">0</integer>
+
+    <!--上传文件命令-->
+    <integer name="cmd_upload">1017</integer>
+    <!--UI-->
+    <integer name="login_ui_row_count">7</integer>
+    <integer name="login_ui_column_count">4</integer>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+            android:id="@+id/check_way_frame">
+        <RadioGroup android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/rg_tab">
+            <RadioButton android:drawableTop="@drawable/tab_radio"
+                         style="@style/tab_button"
+                    android:text="@string/check_way_manual_code"/>
+            <RadioButton android:drawableTop="@drawable/tab_radio"
+                         style="@style/tab_button"
+                         android:text="@string/check_way_scan_code"/>
+            <RadioButton android:drawableTop="@drawable/tab_radio"
+                         style="@style/tab_button"
+                         android:text="@string/check_way_idcard"/>
+        </RadioGroup>
+    </FrameLayout>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"/>
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:rowCount="@integer/login_ui_row_count"
+            android:columnCount="@integer/login_ui_column_count">
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello World, login"
+            />
+    <Spinner
+            android:id="@+id/select_user_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            >
+            </Spinner>
+    <EditText android:id="@+id/txt_password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:digits="@string/password_digits"/>
+    <Button android:id="@+id/btn_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_text_login"
+            />
+</GridLayout>

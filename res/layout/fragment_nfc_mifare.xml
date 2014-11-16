@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tvMifareCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/card_event" />
+
+    <TextView
+        android:id="@+id/tvCardEventMifare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvMifareCard" />
+
+    <TextView
+        android:id="@+id/tvLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvMifareCard" />
+
+    <TableLayout
+        android:id="@+id/tbNFC0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvLog"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal" >
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/I_value_min" />
+
+            <EditText
+                android:id="@+id/et_I_Value_min"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_I_value" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/I_value_max" />
+
+            <EditText
+                android:id="@+id/et_I_Value_max"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_I_value" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Q_value_min" />
+
+            <EditText
+                android:id="@+id/et_Q_Value_min"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_Q_value" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Q_value_max" />
+
+            <EditText
+                android:id="@+id/et_Q_Value_max"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_Q_value" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnSet_IQ_value"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/set_IQ_value" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tbNFC1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbNFC0"
+        android:layout_marginTop="40sp"
+        android:orientation="horizontal" >
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnContactlessOpen"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:text="@+string/open_reader" />
+
+            <Button
+                android:id="@+id/btnContactlessClose"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:text="@+string/close_reader" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tbNFC2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbNFC1"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal" >
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnSearchBegin"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:text="@string/search_target_begin" />
+
+            <Button
+                android:id="@+id/btnSearchStop"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:text="@string/search_target_stop" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tbNFC3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbNFC2"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal" >
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tvSectorId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sector_id" />
+
+            <Spinner
+                android:id="@+id/spSectorId"
+                android:layout_width="100sp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tvBlockId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/block_id" />
+
+            <Spinner
+                android:id="@+id/spBlockId"
+                android:layout_width="100sp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tbNFC4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbNFC3"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal" >
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/cbKeyA"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/key_A" />
+
+            <EditText
+                android:id="@+id/etKeyA"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="Please input KeyA"
+                android:maxLength="12" />
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/cbKeyB"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/key_B" />
+
+            <EditText
+                android:id="@+id/etKeyB"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="Please input KeyB"
+                android:maxLength="12" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnVerify"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:text="@string/verify_card" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tbNFC5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbNFC4"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal" >
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnWriteMifare"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:text="@string/write_mifare_card" />
+
+            <EditText
+                android:id="@+id/etWriteMifare"
+                android:layout_width="500sp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="Please input data"
+                android:maxLength="32" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnReadMifare"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:text="@string/read_mifare_card" />
+
+            <EditText
+                android:id="@+id/etReadMifare"
+                android:layout_width="500sp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

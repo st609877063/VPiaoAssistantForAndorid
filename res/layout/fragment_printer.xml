@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button 
+        android:id="@+id/btnPrinterOpen"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:text="@string/printer_open"/>
+    
+    <Button 
+        android:id="@+id/btnPrinterClose"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/btnPrinterOpen"
+        android:text="@string/printer_close"/>
+    
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@id/btnPrinterClose"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="49dp"
+            android:text="@string/align_left_str" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="49dp"
+            android:text="@string/align_center_str" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="49dp"
+            android:text="@string/align_right_str" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/checkBoxdoubleWidth"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/radioGroup1"
+        android:layout_marginLeft="50dp"
+        android:text="@string/font_double_width" />
+
+    <CheckBox
+        android:id="@+id/checkBoxdoubleHeight"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/checkBoxdoubleWidth"
+        android:layout_toRightOf="@+id/checkBoxdoubleWidth"
+        android:text="@string/font_double_height" />
+
+    <CheckBox
+        android:id="@+id/checkBoxBold"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/checkBoxdoubleWidth"
+        android:layout_toRightOf="@+id/checkBoxdoubleHeight"
+        android:text="@string/font_bold" />
+
+    <EditText
+        android:id="@+id/lineSpacing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/line_spacing"
+        android:layout_alignLeft="@+id/checkBoxdoubleWidth"
+        android:layout_below="@+id/checkBoxdoubleWidth"
+        android:inputType="number"
+        android:maxLength="3"
+        android:ems="10" />
+        
+    <EditText
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBoxdoubleWidth"
+        android:layout_alignRight="@+id/radioGroup1"
+        android:layout_below="@+id/button_printfeed"
+        android:layout_alignParentBottom="true"
+        android:gravity="left|top"
+        android:ems="10"
+        android:hint="@string/print_text" />
+
+    <Button
+        android:id="@+id/button_print"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/content"
+        android:layout_alignRight="@+id/content"
+        android:layout_below="@+id/lineSpacing"
+        android:text="@string/begin_print" />
+   <Button
+        android:id="@+id/button_printfeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/content"
+        android:layout_alignRight="@+id/content"
+		android:layout_below="@+id/button_print"
+        android:text="@string/begin_print_feed" />
+
+   <EditText
+       android:id="@+id/twodbarcode"
+       android:layout_width="300dp"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/checkBoxBold"
+       android:layout_marginLeft="100dp"
+       android:hint="@string/print_two_barcode"
+       android:layout_toRightOf="@+id/radioGroup1"
+       android:ems="10" />
+
+   <EditText
+       android:id="@+id/onedbarcode"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignBaseline="@+id/button_printfeed"
+       android:layout_alignBottom="@+id/button_printfeed"
+       android:layout_alignLeft="@+id/button_print_twodbarcode"
+       android:layout_alignRight="@+id/button_print_twodbarcode"
+       android:inputType="number"
+       android:maxLength="18"
+       android:hint="@string/print_one_barcode"
+       android:ems="10" />
+
+   <Button
+       android:id="@+id/button_print_twodbarcode"
+       android:layout_width="300dp"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/tdwidth"
+       android:layout_alignLeft="@+id/twodbarcode"
+       
+       android:text="@string/print_two_barcode" />
+
+   <EditText
+       android:id="@+id/tdwidth"
+       android:layout_width="150dp"
+       android:layout_height="wrap_content"
+       android:layout_alignLeft="@+id/twodbarcode"
+       android:layout_below="@+id/twodbarcode"
+       android:hint="@string/width"
+       android:maxLength="3"
+       android:inputType="number"
+       android:ems="10" />
+   <EditText
+       android:id="@+id/tdheight"
+       android:layout_width="150dp"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/twodbarcode"
+       android:layout_alignRight="@+id/button_print_twodbarcode"
+       android:inputType="number"
+       android:maxLength="3"
+       android:hint="@string/height"
+       android:ems="10" />
+
+   <EditText
+       android:id="@+id/odwidth"
+       android:layout_width="150dp"
+       android:layout_height="wrap_content"
+       android:layout_alignTop="@+id/content"
+       android:layout_toLeftOf="@+id/tdheight"
+       android:maxLength="3"
+       android:inputType="number"
+       android:ems="10"
+       android:hint="@string/width" />
+
+   <Button
+       android:id="@+id/button_print_onedbarcode"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignLeft="@+id/odwidth"
+       android:layout_alignRight="@+id/odheight"
+       android:layout_below="@+id/odwidth"
+       android:text="@string/print_one_barcode" />
+
+   <Button
+       android:id="@+id/Buttonprint_Bitmap"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignLeft="@+id/button_print_onedbarcode"
+       android:layout_alignRight="@+id/button_print_onedbarcode"
+       android:layout_below="@+id/button_print_onedbarcode"
+       android:layout_marginTop="91dp"
+       android:text="@string/print_image" />
+
+   <EditText
+       android:id="@+id/odheight"
+       android:layout_width="150dp"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/button_print_onedbarcode"
+       android:layout_toRightOf="@+id/tdwidth"
+       android:ems="10"
+       android:maxLength="3"
+       android:hint="@string/height"
+       android:inputType="number" />
+
+</RelativeLayout>

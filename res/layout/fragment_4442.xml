@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tvStorageCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/card_event" />
+
+    <TextView
+        android:id="@+id/tvCardEventSmart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvStorageCard" />
+
+    <TableLayout
+        android:id="@+id/tbStorageCard0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvStorageCard"
+        android:orientation="horizontal" >
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnOpenSmartCardReader"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/open_reader" />
+
+            <Button
+                android:id="@+id/btnCloseSmartCardReader"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/close_reader" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnQuerySmartCardPresence"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/query_card" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnSmartCardPowerOn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/card_power_on" />
+
+            <Button
+                android:id="@+id/btnSmartCardPowerOff"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/card_power_off" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnPinVerify"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/verify_pin" />
+
+            <EditText
+                android:id="@+id/etVerifyInput"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_verify_pin"
+                android:maxLength="6" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tbStorageCard1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbStorageCard0"
+        android:orientation="horizontal" >
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/write_address" />
+
+            <EditText
+                android:id="@+id/etMainMemoryAddr"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/main_mem_address" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnWriteMainStorage"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/write_main_mem" />
+
+            <EditText
+                android:id="@+id/etStorageInput"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_main_mem"
+                android:maxLength="32" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnReadMainStorage"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/read_main_mem" />
+
+            <EditText
+                android:id="@+id/etStorageOutput"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/write_address" />
+
+            <EditText
+                android:id="@+id/etProtectedMemoryAddr"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/protected_mem_address" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnWriteStorageSolid"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/write_protected_mem" />
+
+            <EditText
+                android:id="@+id/etSolidInput"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_protected_mem"
+                android:maxLength="32" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnReadStorageSolid"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/read_protected_mem" />
+
+            <EditText
+                android:id="@+id/etSolidOutput"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnUpdatePin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/update_pin" />
+
+            <EditText
+                android:id="@+id/etPinInput"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_update_pin"
+                android:maxLength="6" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnReadUpdatePin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/read_update_pin" />
+
+            <EditText
+                android:id="@+id/etPinOutput"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>
