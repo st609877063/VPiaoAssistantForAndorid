@@ -32,8 +32,10 @@
     <string name="note_device_not_ready">设备尚未准备好</string>
     <string name="note_read_id_card_failed">读取身份证失败</string>
     <string name="note_not_found_idcard">未能找到身份证</string>
+    <string name="print_test">打印测试</string>
 
 
+    <!--酷云测试-->
         <string name="printer_test">打印机测试</string>
 
 
@@ -292,5 +294,29 @@
         <string name="camera_led_on">打开摄像头灯</string>
         <string name="camera_led_off">关闭摄像头灯</string>
         <string name="camera_led_flash">摄像头灯闪烁</string>
+    <!--打印测试-->
+    <string name="shop_company_title">宁波月湖店</string>
+    <string name="shop_num">门店号：</string>
+    <string name="shop_note_num">单据号：</string>
+    <string name="shop_cashier_num">收银员：</string>
+    <string name="shop_receipt_date">单据日期：</string>
+    <string name="shop_print_time">打印时间：</string>
+    <string name="shop_goods_number">数量：</string>
+    <string name="shop_goods_total_price">总计：</string>
+    <string name="shop_payment">付款：</string>
+    <string name="shop_change">找零：</string>
+    <string name="shop_company_name">公司名称：江苏某某家居用品有限公司</string>
+    <string name="shop_company_site">公司网址：</string>
+    <string name="shop_company_address">地址：江苏省宁波市某某路某某号</string>
+    <string name="shop_company_tel">电话：</string>
+    <string name="shop_Service_Line">服务专线：</string>
+    <string name="shop_thanks">谢谢惠顾,欢迎再次光临！</string>
+    <string name="shop_demo">Demo 版本！</string>
+    <string name="note_title">品名;数量;单价;金额</string>
+    <string name="bags">保鲜袋</string>
+    <string name="umbrella">雨伞</string>
+    <string name="hook">铁丝挂钩</string>
+    <string name="str_note">打印小票效果演示：</string>
+    <string name="shop_receipt_num">单据</string>
 
 </resources>

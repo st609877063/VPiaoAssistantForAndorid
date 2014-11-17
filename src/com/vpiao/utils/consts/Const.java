@@ -63,14 +63,37 @@ public final  class Const {
      */
     public static final UsbDeviceInfo SNBC_POS_PRINT=new UsbDeviceInfo(5455,5455,"SNBC");
 
+    /**
+     * 标记消息体来自USBReceiver
+     */
     public static final int USB_STATE_MSG = 0x00020;
+    /**
+     * usb state 正常
+     */
     public static final int USB_STATE_ON = 0x00021;
+    /**
+     * 以卸载usb设备
+     */
     public static final int USB_STATE_OFF = 0x00022;
+    /**
+     * HID设备接口正常
+     */
     public static final int USB_HID_STATE_ON = 0x00023;
+
+    /**
+     * 打印机设备正常
+     */
+    public static final int USB_PRINT_STATE_ON = 0x00023;
     /**
      * HID设备USB权限
      */
     public static final String HID_USB_PERMISSION = "com.vpiao.HID.USB_PERMISSION";
+    /**
+     * USB打印机设备权限
+     */
+    public static final String PRINT_USB_PERMISSION = "com.vipao.usb.USB_PERMISSION";
+
+    public static final String PRINT_DEFAULT_CHARSET_NAME="gbk";
 
 
 

@@ -31,7 +31,6 @@ import com.vpiao.utils.consts.Const;
 public class CheckWayIdCard extends Fragment {
 
     private static final String TAG="CheckWayIdCard";
-//    private Activity context;
     private BroadcastReceiver usbReceiver;
     private PendingIntent mPermissionIntent;
     private UsbManager usbManager;

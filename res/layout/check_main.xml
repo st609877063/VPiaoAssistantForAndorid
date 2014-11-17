@@ -20,6 +20,9 @@
             <RadioButton android:drawableTop="@drawable/tab_radio"
                          style="@style/tab_button"
                          android:text="@string/check_way_idcard"/>
+            <RadioButton android:drawableTop="@drawable/tab_radio"
+                         style="@style/tab_button"
+                         android:text="@string/print_test"/>
         </RadioGroup>
     </FrameLayout>
     <EditText

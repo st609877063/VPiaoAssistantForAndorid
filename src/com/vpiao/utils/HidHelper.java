@@ -41,6 +41,9 @@ public final class HidHelper {
                 return -2;
             }
             Log.v(TAG,"read idcard success");
+            //蜂鸣，灯光
+            iDRHIDDev.BeepLed(true, true, 500);
+
             return 0;
         }else{
             //找卡失败

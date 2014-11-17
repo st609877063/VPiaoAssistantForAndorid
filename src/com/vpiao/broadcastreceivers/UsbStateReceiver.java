@@ -39,10 +39,13 @@ public final class UsbStateReceiver extends  BroadcastReceiver{
         Message msg=Message.obtain();
         msg.what= Const.USB_STATE_MSG;
         msg.obj=intent;
-        if(intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_ATTACHED)){
+        String action=intent.getAction();
+        if(action.equals(UsbManager.ACTION_USB_DEVICE_ATTACHED)){
             msg.arg1=Const.USB_STATE_ON;
-        }else if(intent.getAction().equals(Const.HID_USB_PERMISSION)){
+        }else if(action.equals(Const.HID_USB_PERMISSION)){
             msg.arg1=Const.USB_HID_STATE_ON;
+        }else if(action.equals(Const.PRINT_USB_PERMISSION)){
+            msg.arg1=Const.USB_PRINT_STATE_ON;
         }
         else{
             msg.arg1=Const.USB_STATE_OFF;
