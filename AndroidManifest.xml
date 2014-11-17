@@ -47,7 +47,12 @@
             <!--</intent-filter>-->
         </activity>
         <activity android:name="com.vpiao.ui.views.Login">
+
+        </activity>
+        <activity android:name="com.vpiao.ui.views.CheckMain">
             <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
                 <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"/>
                 <action android:name="android.hardware.usb.action.USB_DEVICE_DETACHED" />
             </intent-filter>
@@ -55,12 +60,6 @@
                        android:resource="@xml/device_filter"/>
             <meta-data android:name="android.hardware.usb.action.USB_DEVICE_DETACHED"
                        android:resource="@xml/device_filter"/>
-        </activity>
-        <activity android:name="com.vpiao.ui.views.CheckMain">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <!--二维码扫描-->
         <activity android:name="com.zxing.client.android.CaptureActivity"></activity>

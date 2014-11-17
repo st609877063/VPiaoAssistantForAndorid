@@ -4,7 +4,6 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.hardware.usb.UsbManager;
 import android.os.Handler;
 import android.os.Message;
@@ -39,9 +38,13 @@ public final class UsbStateReceiver extends  BroadcastReceiver{
         Log.v(TAG,"action="+intent.getAction());
         Message msg=Message.obtain();
         msg.what= Const.USB_STATE_MSG;
+        msg.obj=intent;
         if(intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_ATTACHED)){
             msg.arg1=Const.USB_STATE_ON;
-        }else{
+        }else if(intent.getAction().equals(Const.HID_USB_PERMISSION)){
+            msg.arg1=Const.USB_HID_STATE_ON;
+        }
+        else{
             msg.arg1=Const.USB_STATE_OFF;
         }
         this.handler.sendMessage(msg);

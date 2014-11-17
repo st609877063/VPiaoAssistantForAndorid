@@ -29,6 +29,9 @@
     <string name="check_way_idcard_induction">设备识别</string>
     <string name="button_text_read_idcard">读取身份证</string>
     <string name="note_insert_card_read">请插入读卡器</string>
+    <string name="note_device_not_ready">设备尚未准备好</string>
+    <string name="note_read_id_card_failed">读取身份证失败</string>
+    <string name="note_not_found_idcard">未能找到身份证</string>
 
 
         <string name="printer_test">打印机测试</string>
