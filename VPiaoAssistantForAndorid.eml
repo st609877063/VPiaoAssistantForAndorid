@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" jdk="Android 4.4.2 Google APIs" jdk_type="Android SDK">
+	<output-test url="file://$MODULE_DIR$/out/test/VPiaoAssistantForAndorid"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<levels>
+		<level name="iDRHIDLib" value="project"/>
+		<level name="core-2.2" value="project"/>
+		<level name="android-support-v4" value="project"/>
+	</levels>
+</component>

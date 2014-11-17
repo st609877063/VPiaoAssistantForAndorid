@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="android-support-v4">
+    <archive path="G:/Andriod/VPiaoAssistantForAndorid_git/libs/android-support-v4.jar" />
+  </library>
+  <library name="core-2.2">
+    <archive path="G:/Andriod/VPiaoAssistantForAndorid_git/libs/core-2.2.jar" />
+  </library>
+  <library name="iDRHIDLib">
+    <archive path="G:/Andriod/VPiaoAssistantForAndorid_git/libs/iDRHIDLib.jar" />
+  </library>
+</eclipse-userlibraries>
+
