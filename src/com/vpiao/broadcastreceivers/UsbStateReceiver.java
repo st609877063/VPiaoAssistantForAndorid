@@ -1,12 +1,15 @@
 package com.vpiao.broadcastreceivers;
 
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.hardware.usb.UsbManager;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import com.vpiao.utils.consts.Const;
 
 /**
  * HID设备接收广播信息
@@ -15,28 +18,15 @@ import android.util.Log;
 public final class UsbStateReceiver extends  BroadcastReceiver{
 
     private static final String TAG="UsbStateReceiver";
-    public static final int USB_STATE_MSG = 0x00020;
-    public static final int USB_STATE_ON = 0x00021;
-    public static final int USB_STATE_OFF = 0x00022;
+
     private Handler handler;
-    public UsbStateReceiver(Handler handler){
+    private PendingIntent pendingIntent;
+    public UsbStateReceiver(Handler handler,PendingIntent pendingIntent){
         super();
         this.handler=handler;
+        this.pendingIntent=pendingIntent;
     }
 
-//    private void registerReceiver() {
-//        IntentFilter filter = new IntentFilter();
-//        filter.addAction(Intent.ACTION_MEDIA_MOUNTED);
-//        filter.addAction(Intent.ACTION_MEDIA_CHECKING);
-//        filter.addAction(Intent.ACTION_MEDIA_EJECT);
-//        filter.addAction(Intent.ACTION_MEDIA_REMOVED);
-//        filter.addDataScheme("file");
-//        this.context.registerReceiver(this, filter);
-//    }
-
-//    public void unregisterReceiver(){
-//        this.context.unregisterReceiver(this);
-//    }
 
 
 
@@ -48,11 +38,11 @@ public final class UsbStateReceiver extends  BroadcastReceiver{
         }
         Log.v(TAG,"action="+intent.getAction());
         Message msg=Message.obtain();
-        msg.what=USB_STATE_MSG;
-        if(intent.getAction().equals(Intent.ACTION_MEDIA_MOUNTED)||intent.getAction().equals(Intent.ACTION_MEDIA_CHECKING)){
-            msg.arg1=USB_STATE_ON;
+        msg.what= Const.USB_STATE_MSG;
+        if(intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_ATTACHED)){
+            msg.arg1=Const.USB_STATE_ON;
         }else{
-            msg.arg1=USB_STATE_OFF;
+            msg.arg1=Const.USB_STATE_OFF;
         }
         this.handler.sendMessage(msg);
     }

@@ -1,23 +1,14 @@
 package com.vpiao.ui.views;
 
 import android.app.Activity;
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.hardware.usb.UsbManager;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.*;
-//import com.android.future.usb.UsbManager;
 
 import com.example.VpiaoAssistant.R;
 import com.vpiao.VpiaoApp;
-import com.vpiao.broadcastreceivers.UsbStateReceiver;
 import com.vpiao.domain.User;
 import com.vpiao.ui.dialogs.NoUserDataAlterDialog;
 import com.vpiao.utils.domains.UserHelper;
@@ -39,10 +30,6 @@ public class Login extends Activity {
 
     private VpiaoApp vpiaoApp;
 
-    private static final String ACTION_USB_PERMISSION = "com.vpiao.ui.views.Login.USB_PERMISSION";
-    private PendingIntent mPermissionIntent;
-
-    private UsbStateReceiver usbStateReceiver;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,44 +49,11 @@ public class Login extends Activity {
         }catch (Exception ex){
             ex.printStackTrace();
         }
-        /*usbStateReceiver=new UsbStateReceiver(hand);
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(Intent.ACTION_MEDIA_MOUNTED);
-        filter.addAction(Intent.ACTION_MEDIA_CHECKING);
-        filter.addAction(Intent.ACTION_MEDIA_EJECT);
-        filter.addAction(Intent.ACTION_MEDIA_REMOVED);
-        filter.addAction(UsbManager.ACTION_USB_ACCESSORY_ATTACHED);
-        filter.addAction(UsbManager.ACTION_USB_ACCESSORY_DETACHED);
-        filter.addDataScheme("file");
-        filter.addAction(ACTION_USB_PERMISSION);
-        registerReceiver(usbStateReceiver,filter);
-        mPermissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);*/
 
         //绑定事件
         selectUserChanged();
         btnLoginClick();
     }
-
-    @Override
-    protected void onStop(){
-        super.onStop();
-        unregisterReceiver(usbStateReceiver);
-//        usbStateReceiver.unregisterReceiver();
-    }
-    @Override
-    protected void onResume(){
-        super.onResume();
-        Log.v("login","resume");
-    }
-
-    final Context context=this;
-    Handler usbHandler=new Handler(){
-
-        @Override
-        public void handleMessage(Message msg){
-            Toast.makeText(context,R.string.password_empty,Toast.LENGTH_SHORT).show();
-        }
-    };
 
     /**
      * 登陆button

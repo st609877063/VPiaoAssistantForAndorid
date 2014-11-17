@@ -15,6 +15,7 @@ public final class UsbHelper {
     /**
      * 检查指定的usb设备是否插入
      * @param usbDeviceList
+     * @param usbDeviceInfo
      * @return
      */
     public static boolean checkUsbIsInsert(List<UsbDevice> usbDeviceList,UsbDeviceInfo usbDeviceInfo) {
@@ -31,6 +32,9 @@ public final class UsbHelper {
         }
         return false;
     }
+
+
+
 
 
 }

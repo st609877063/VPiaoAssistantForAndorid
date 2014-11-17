@@ -7,4 +7,13 @@
     <TextView android:layout_width="fill_parent"
               android:layout_height="wrap_content"
               android:text="@string/check_way_idcard"/>
+    <Button
+            android:id="@+id/btn_read_idcard"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_text_read_idcard"/>
+    <TextView
+            android:id="@+id/text_view_card_id"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
 </LinearLayout>

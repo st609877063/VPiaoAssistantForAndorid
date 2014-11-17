@@ -3,7 +3,7 @@
           package="com.example.VpiaoAssistant"
           android:versionCode="1"
           android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="14"/>
+    <uses-sdk android:minSdkVersion="17"/>
     <uses-feature android:name="android.hardware.usb.host"></uses-feature>
     <uses-feature android:name="android.hardware.camera"></uses-feature>
     <uses-feature android:name="android.hardware.camera.autofocus"></uses-feature>
@@ -62,6 +62,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!--二维码扫描-->
         <activity android:name="com.zxing.client.android.CaptureActivity"></activity>
+
     </application>
 </manifest>

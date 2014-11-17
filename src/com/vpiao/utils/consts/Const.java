@@ -63,6 +63,14 @@ public final  class Const {
      */
     public static final UsbDeviceInfo SNBC_POS_PRINT=new UsbDeviceInfo(5455,5455,"SNBC");
 
+    public static final int USB_STATE_MSG = 0x00020;
+    public static final int USB_STATE_ON = 0x00021;
+    public static final int USB_STATE_OFF = 0x00022;
+    /**
+     * HID设备USB权限
+     */
+    public static final String ACTION_USB_PERMISSION = "com.vpiao.HID.USB_PERMISSION";
+
 
 
 }

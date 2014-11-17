@@ -16,5 +16,14 @@ public class UsbDeviceInfo {
         this.deviceName = deviceName;
     }
 
+    @Override
+    public int hashCode() {
+        return vendorId^productId;
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        UsbDeviceInfo usbDeviceInfo= (UsbDeviceInfo) o;
+        return usbDeviceInfo.productId==this.productId&&usbDeviceInfo.vendorId==this.vendorId;
+    }
 }

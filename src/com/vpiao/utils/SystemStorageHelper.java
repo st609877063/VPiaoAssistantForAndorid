@@ -18,8 +18,8 @@ public class SystemStorageHelper {
         String path= Environment.getRootDirectory().getPath();
         StatFs statFs=new StatFs(path);
         //获取block的大小
-        long blockSize=statFs.getBlockSize();
-        long availableBlock=statFs.getBlockCount();
+        long blockSize=statFs.getBlockSizeLong();
+        long availableBlock=statFs.getAvailableBlocksLong();
         return (blockSize*availableBlock)/1024;
     }
 

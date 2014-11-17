@@ -27,6 +27,8 @@
     <string name="check_way_idcard">身份证</string>
     <string name="check_way_idcard_input">键盘</string>
     <string name="check_way_idcard_induction">设备识别</string>
+    <string name="button_text_read_idcard">读取身份证</string>
+    <string name="note_insert_card_read">请插入读卡器</string>
 
 
         <string name="printer_test">打印机测试</string>

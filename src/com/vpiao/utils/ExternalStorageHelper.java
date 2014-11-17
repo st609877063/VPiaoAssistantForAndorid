@@ -38,8 +38,8 @@ public final class ExternalStorageHelper {
         String path=getPath();
         StatFs statFs=new StatFs(path);
         //获取block的大小
-        long blockSize=statFs.getBlockSize();
-        long availableBlock=statFs.getAvailableBlocks();
+        long blockSize=statFs.getBlockSizeLong();
+        long availableBlock=statFs.getAvailableBlocksLong();
         return (blockSize*availableBlock)/1024;
     }
 }
