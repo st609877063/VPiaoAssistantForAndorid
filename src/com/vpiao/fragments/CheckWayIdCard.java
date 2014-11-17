@@ -64,7 +64,6 @@ public class CheckWayIdCard extends Fragment {
                     Toast.makeText(view.getContext(),R.string.note_insert_card_read,Toast.LENGTH_SHORT).show();
                     return;
                 }else {
-
                     iDRHIDDev.SecondIDInfo sIDInfo = mHIDDev.new SecondIDInfo();
                     int result = HidHelper.gerSecondIDInfo(mHIDDev, sIDInfo, context);
                     switch (result) {
@@ -137,7 +136,7 @@ public class CheckWayIdCard extends Fragment {
                     if(mDevice!=null&&mDevice.equals(device)){
                         mHIDDev.closeDevice();
                         mDevice=null;
-                        Log.d(TAG,"hid device has dettached");
+                        Log.d(TAG,"hid device has detached");
                     }
                 }
             }

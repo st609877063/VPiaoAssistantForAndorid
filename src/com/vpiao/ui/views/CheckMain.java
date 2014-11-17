@@ -21,6 +21,10 @@ public class CheckMain extends Activity {
     private static final String TAG="CheckMain";
     private FragmentManager fragmentManager;
     private RadioGroup radioGroup;
+    private Fragment fragment;
+    private FragmentTransaction transaction;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -34,8 +38,7 @@ public class CheckMain extends Activity {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                FragmentTransaction transaction=fragmentManager.beginTransaction();
-                Fragment fragment=null;
+                transaction=fragmentManager.beginTransaction();
                 switch (checkedId){
                     case 1:
                         fragment=new CheckWayTypeCode();
@@ -52,6 +55,14 @@ public class CheckMain extends Activity {
                 Log.v(TAG,checkedId+"");
             }
         });
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(fragment!=null){
+            transaction.replace(R.id.check_way_frame,fragment);
+            transaction.commit();
+        }
     }
 }
