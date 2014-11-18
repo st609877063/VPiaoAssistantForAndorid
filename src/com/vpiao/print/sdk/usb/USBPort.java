@@ -11,6 +11,7 @@ import android.os.Message;
 import android.util.Log;
 import com.vpiao.broadcastreceivers.UsbStateReceiver;
 import com.vpiao.print.sdk.IPrinterPort;
+import com.vpiao.print.sdk.PrinterConstants;
 import com.vpiao.utils.consts.Const;
 
 /**
@@ -29,7 +30,6 @@ public class USBPort implements IPrinterPort {
     private Context mContext;
     private ConnectThread mConnectThread;
     private UsbDeviceConnection connection;
-    private BroadcastReceiver mUsbReceiver;
     public USBPort(Context context, UsbDevice usbDevice, Handler handler)
     {
         this.mContext = context;
@@ -105,11 +105,10 @@ public class USBPort implements IPrinterPort {
             }
             else
             {
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(this.mContext, 0, new Intent(Const.PRINT_USB_PERMISSION), 0);
-                IntentFilter filter = new IntentFilter(Const.PRINT_USB_PERMISSION);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(this.mContext, 0, new Intent(PrinterConstants.Device.PRINT_USB_PERMISSION), 0);
+                IntentFilter filter = new IntentFilter(PrinterConstants.Device.PRINT_USB_PERMISSION);
                 filter.addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED);
                 filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
-                this.mUsbReceiver=new UsbStateReceiver(handler,pendingIntent);
                 this.mContext.registerReceiver(this.mUsbReceiver, filter);
                 this.mUsbManager.requestPermission(this.mUsbDevice, pendingIntent);
             }
@@ -185,15 +184,18 @@ public class USBPort implements IPrinterPort {
     }
 
     /**
-     * 处理usbReceiver的handler
+     * USB接口
      */
-    Handler handler=new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            if(msg.arg1==Const.USB_PRINT_STATE_ON){
-                Log.d(TAG,"the printer is attached");
-                Intent intent= (Intent) msg.obj;
-                synchronized (this){
+    final BroadcastReceiver mUsbReceiver = new BroadcastReceiver()
+    {
+        public void onReceive(Context context, Intent intent)
+        {
+            String action = intent.getAction();
+            Log.w(TAG, "receiver action: " + action);
+            if (PrinterConstants.Device.PRINT_USB_PERMISSION.equals(action)) {
+                synchronized (this)
+                {
+                    USBPort.this.mContext.unregisterReceiver(USBPort.this.mUsbReceiver);
                     UsbDevice device = (UsbDevice)intent.getParcelableExtra(UsbManager.EXTRA_DEVICE);
                     if ((intent.getBooleanExtra("permission", false)) && (USBPort.this.mUsbDevice.equals(device)))
                     {
@@ -202,15 +204,11 @@ public class USBPort implements IPrinterPort {
                     else
                     {
                         USBPort.this.setState(102);
-                        Log.e("USBPrinter", "permission denied for device " + device);
+
+                        Log.e(TAG, "permission denied for device " + device);
                     }
                 }
-            }else{
-                Log.d(TAG,"the printer are detached");
             }
-
-
-            super.handleMessage(msg);
         }
     };
 

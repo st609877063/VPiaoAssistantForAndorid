@@ -8,6 +8,7 @@ import android.hardware.usb.UsbManager;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import com.vpiao.print.sdk.PrinterConstants;
 import com.vpiao.utils.consts.Const;
 
 /**
@@ -44,7 +45,7 @@ public final class UsbStateReceiver extends  BroadcastReceiver{
             msg.arg1=Const.USB_STATE_ON;
         }else if(action.equals(Const.HID_USB_PERMISSION)){
             msg.arg1=Const.USB_HID_STATE_ON;
-        }else if(action.equals(Const.PRINT_USB_PERMISSION)){
+        }else if(action.equals(PrinterConstants.Device.PRINT_USB_PERMISSION)){
             msg.arg1=Const.USB_PRINT_STATE_ON;
         }
         else{

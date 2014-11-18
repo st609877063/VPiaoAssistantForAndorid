@@ -73,6 +73,10 @@ public class PrinterConstants
     {
         public static final int FOUND = 1;
         public static final int FINISHED = 2;
+        /**
+         * USB打印机设备权限
+         */
+        public static final String PRINT_USB_PERMISSION = "com.vipao.usb.USB_PERMISSION";
     }
 }
 

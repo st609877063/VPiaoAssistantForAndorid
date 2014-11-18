@@ -88,10 +88,7 @@ public final  class Const {
      * HID设备USB权限
      */
     public static final String HID_USB_PERMISSION = "com.vpiao.HID.USB_PERMISSION";
-    /**
-     * USB打印机设备权限
-     */
-    public static final String PRINT_USB_PERMISSION = "com.vipao.usb.USB_PERMISSION";
+
 
     public static final String PRINT_DEFAULT_CHARSET_NAME="gbk";
 
